@@ -30,9 +30,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+      	flash[:success] = "Ton compte est bien créé !"
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
+      	flash[:danger] = "Ton compte n'a pas pu être créé !"
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
