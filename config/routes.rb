@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'accueil#index'
   resources :attendances
   resources :events
   resources :users
