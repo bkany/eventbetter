@@ -18,5 +18,11 @@ class User < ApplicationRecord
 		uniqueness: { case_sensitive: false },
 		length: { minimum: 4, maximum: 254 },
 		format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please enter a valide email"  }
+		
+		after_create :welcome_send
+		
+		def welcome_send
+			UserMailer.welcome_email(self).deliver_now
+		end
 	
 end

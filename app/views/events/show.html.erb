@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Evenement n°<%= params[:id] %></h1>
+
+<h4><%= @event.title %></h4>
+<p><%= @event.description %></p>
+
+<br />
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
