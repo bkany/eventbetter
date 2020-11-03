@@ -58,3 +58,5 @@ gem 'spring'
 gem 'devise'
 
 gem 'dotenv-rails'
+
+gem 'letter_opener'

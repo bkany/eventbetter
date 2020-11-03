@@ -1,5 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <br><br><br>
+
 <h1>New Event</h1>
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+  <div class="field">
+    <%= label_tag 'title' %><br />
+    <%= text_field_tag 'title', @event.title %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'description' %><br />
+    <%= text_area_tag 'description', @event.description %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'start_date' %><br />
+    <%= time_field_tag 'start_date', @event.start_date %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'duration' %><br />
+    <%= number_field_tag 'duration', @event.duration %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'price' %><br />
+    <%= number_field_tag 'price', @event.price %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'location' %><br />
+    <%= text_field_tag 'location', @event.location %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Créer" %>
+  </div>
+  
+  
+
+<% end %>
+
 
 <%= render 'form', event: @event %>
 
 <%= link_to 'Back', events_path %>
+
+</div>
+</div>
+</div>
