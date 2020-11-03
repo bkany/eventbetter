@@ -56,3 +56,5 @@ gem 'faker'
 gem 'spring'
 
 gem 'devise'
+
+gem 'dotenv-rails'
