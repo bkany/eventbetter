@@ -20,7 +20,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-  	@user = User.find(params[:id])
+  	if params[:id] = session[:id]
+  		@user = User.find(params[:id])
+  	else
+  		redirect_to( @user )
+  	end
   end
 
   # POST /users

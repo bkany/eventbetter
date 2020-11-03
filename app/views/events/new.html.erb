@@ -18,7 +18,7 @@
   
   <div class="field">
     <%= label_tag 'start_date' %><br />
-    <%= time_field_tag 'start_date', @event.start_date %>
+    <%= date_field_tag 'start_date', @event.start_date %>
   </div>
 
   <div class="field">
@@ -37,7 +37,7 @@
   </div>
 
   <div class="actions">
-    <%= submit_tag "Créer" %>
+    <%= submit_tag "create" %>
   </div>
   
   
@@ -45,7 +45,7 @@
 <% end %>
 
 
-<%= render 'form', event: @event %>
+
 
 <%= link_to 'Back', events_path %>
 
