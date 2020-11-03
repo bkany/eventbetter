@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'accueil#index'
+  root to: 'events#index'
   resources :attendances
   resources :events
   resources :users
