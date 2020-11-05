@@ -5,49 +5,45 @@
 
 <h1>New Event</h1>
 
-<%= form_tag url_for(action: 'create'), method: "post" do %>
-  <div class="field">
-    <%= label_tag 'title' %><br />
-    <%= text_field_tag 'title', @event.title %>
+<%= form_for @event do |f| %>
+  <div class="form-group">
+    <%= f.label :title, "Titre" %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
   </div>
   
-  <div class="field">
-    <%= label_tag 'description' %><br />
-    <%= text_area_tag 'description', @event.description %>
+  <div class="form-group">
+    <%= f.label :description, "Description" %><br />
+    <%= f.text_area :description, autofocus: true, autocomplete: "description" %>
   </div>
   
-  <div class="field">
-    <%= label_tag 'start_date' %><br />
-    <%= date_field_tag 'start_date', @event.start_date %>
+  <div class="form-group">
+    <%= f.label :start_date, "Date" %><br />
+    <%= f.date_field :start_date, autofocus: true, autocomplete: "start_date" %>
   </div>
 
-  <div class="field">
-    <%= label_tag 'duration' %><br />
-    <%= number_field_tag 'duration', @event.duration %>
+  <div class="form-group">
+    <%= f.label :duration, "Durée" %><br />
+    <%= f.number_field :duration, autofocus: true, autocomplete: "duration" %>
   </div>
   
-  <div class="field">
-    <%= label_tag 'price' %><br />
-    <%= number_field_tag 'price', @event.price %>
+  <div class="form-group">
+    <%= f.label :price, "Prix" %><br />
+    <%= f.number_field :price, autofocus: true, autocomplete: "price" %>
   </div>
   
-  <div class="field">
-    <%= label_tag 'location' %><br />
-    <%= text_field_tag 'location', @event.location %>
+  <div class="form-group">
+    <%= f.label :location, "Ville" %><br />
+    <%= f.text_field :location, autofocus: true, autocomplete: "location" %>
   </div>
 
   <div class="actions">
-    <%= submit_tag "create" %>
+    <%= f.submit "Submit", class: "btn btn-lg btn-primary btn-block" %>
   </div>
   
   
 
 <% end %>
 
-
-
-
-<%= link_to 'Back', events_path %>
 
 </div>
 </div>

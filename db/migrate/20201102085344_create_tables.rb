@@ -20,10 +20,10 @@ class CreateTables < ActiveRecord::Migration[6.0]
     	t.integer :duration
     	t.integer :price
     	t.string :location
-    	t.belongs_to :user, index: true
+    	t.belongs_to :admin, index: true
     	t.timestamps
     end
-    
+
   # CREATION DE LA TABLE ATTENDANCES
     create_table :attendances do |t|    
     	t.belongs_to :user, index: true
