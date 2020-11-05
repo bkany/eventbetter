@@ -6,6 +6,8 @@ class User < ApplicationRecord
 	
 	has_many :events, through: :attendances
 	
+	has_one_attached :avatar
+	
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :encrypted_password, presence: true

@@ -1,4 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
 <p id="notice"><%= notice %></p>
+
+<div="container">
 
 <p><%= @user.first_name %> <%= @user.last_name %></p>
 
@@ -6,7 +12,24 @@
 
 <p><%= @user.email %></p> 
 
- 
+<% if @user.avatar.attached? %>
+	<%= image_tag @user.avatar, alt: 'avatar', width: '200px' %>
+<% else %>
+	<p>L'utilisateur n'a pas encore d'avatar. </p>
+	
+	<%= form_tag user_avatars_path(@user), multipart: true do %>
+		<%= file_field_tag :avatar %>
+		<%= submit_tag "Uploader l'avatar" %>
+	<% end %>
+	
+<% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<br />
+
+<%= link_to 'Edit', edit_user_path(current_user), class: "btn btn-primary" %> |
+<%= link_to 'Back', '/', class: "btn btn-primary" %>
+
+
+</div>
+
+</div></div></div>
